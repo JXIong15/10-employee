@@ -1,0 +1,22 @@
+{
+  "name": "10-employee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JXIong15/10-employee.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JXIong15/10-employee/issues"
+  },
+  "homepage": "https://github.com/JXIong15/10-employee#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}

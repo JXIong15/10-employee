@@ -5,6 +5,7 @@ const engineerQ = require("./questions/engineer-questions.js");
 const Engineer = require("./library/Engineer.js");
 const internQ = require("./questions/intern-questions.js");
 const Intern = require("./library/Intern.js");
+const inquirer = require("inquirer");
 
 // Array of the team members
 const team = [];
@@ -18,7 +19,7 @@ function askManager() {
 }
 
 function askEngineer() {
-    prompt(managerQ).then(answers => {
+    prompt(engineerQ).then(answers => {
         console.log(answers)
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.username);
         team.push(engineer);
@@ -26,7 +27,7 @@ function askEngineer() {
 }
 
 function askIntern() {
-    prompt(managerQ).then(answers => {
+    prompt(internQ).then(answers => {
         console.log(answers)
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         team.push(intern);
@@ -35,11 +36,29 @@ function askIntern() {
 
 function renderEmployeeInfo(data) {
     switch(data.role) {
-      case "Manager": askManager();
-      case "Engineer": askEngineer();
-      case "Intern": askIntern();
+      case "Manager": return askManager();
+      case "Engineer": return askEngineer();
+      case "Intern": return askIntern();
     }
   }
+
+function addMore() {
+    inquirer
+        .prompt({
+            type: "list",
+            name: "add",
+            message: "Would you like to add another employee?",
+            choices: ["Yes", "No"]
+        })
+        .then((response) => {
+            if (response == "Yes") {
+                init();
+            }
+            else {
+                return;
+            }
+        })
+}
 
 function init() {
     inquirer
@@ -49,8 +68,9 @@ function init() {
             mesage: "What is the employee role?",
             choices: ['Manager', 'Engineer', 'Intern']
         })
-        .then((response) => {renderEmployeeInfo(response);
+        .then((response) => {renderEmployeeInfo(response)
     })
+    // addMore();
 }
 
 

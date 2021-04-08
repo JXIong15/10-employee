@@ -7,6 +7,11 @@ const internQ = require("./questions/intern-questions.js");
 const Intern = require("./library/Intern.js");
 const inquirer = require("inquirer");
 
+// needed for generating HTML file
+const generateEmployeeCards = require("./generateEmployeeCards.js");
+const fs = require("fs");
+const path = require("path");
+
 // Array of the team members
 const team = [];
 
@@ -15,6 +20,7 @@ function askManager() {
         console.log(answers)
         const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
         team.push(manager);
+        addMore();
     });
 }
 
@@ -23,6 +29,7 @@ function askEngineer() {
         console.log(answers)
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.username);
         team.push(engineer);
+        addMore();
     });
 }
 
@@ -31,6 +38,7 @@ function askIntern() {
         console.log(answers)
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         team.push(intern);
+        addMore();
     });
 }
 
@@ -43,21 +51,33 @@ function renderEmployeeInfo(data) {
   }
 
 function addMore() {
-    inquirer
-        .prompt({
+        prompt({
             type: "list",
             name: "add",
             message: "Would you like to add another employee?",
             choices: ["Yes", "No"]
         })
         .then((response) => {
-            if (response == "Yes") {
+            console.log(response);
+            if (response.add == "Yes") {
                 init();
             }
             else {
-                return;
+                // writeToFile("index.html", generateEmployeeCards(team));
             }
         })
+}
+
+// Writes html card file
+function writeToFile(fileName, data) {
+    try {
+        let rm = fs.writeFileSync(path.join(process.cwd(), fileName), data)
+        console.log("Your employee card(s) has been generated!");
+        return rm;
+    }
+    catch {
+        return console.log("Employee Card Generator failed.");
+    }
 }
 
 function init() {
@@ -68,15 +88,9 @@ function init() {
             mesage: "What is the employee role?",
             choices: ['Manager', 'Engineer', 'Intern']
         })
-        .then((response) => {renderEmployeeInfo(response)
-    })
-    // addMore();
+        .then((response) => {
+            renderEmployeeInfo(response);
+        })
 }
 
-
 init();
-
-
-// ask what the employee type is
-// use a switch statement to call a diff func based on employee type
-// No external CSS file.

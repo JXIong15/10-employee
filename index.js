@@ -53,16 +53,17 @@ function renderEmployeeInfo(data) {
 function addMore() {
         prompt({
             type: "list",
-            name: "add",
+            name: "answer",
             message: "Would you like to add another employee?",
             choices: ["Yes", "No"]
         })
         .then((response) => {
-            console.log(response);
-            if (response.add == "Yes") {
+            if (response.answer == "Yes") {
                 init();
             }
             else {
+                console.log(team);
+                console.log(team[0].constructor.name);
                 // writeToFile("index.html", generateEmployeeCards(team));
             }
         })

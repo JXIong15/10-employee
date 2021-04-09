@@ -17,7 +17,6 @@ const team = [];
 
 function askManager() {
     prompt(managerQ).then(answers => {
-        console.log(answers)
         const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
         team.push(manager);
         addMore();
@@ -26,7 +25,6 @@ function askManager() {
 
 function askEngineer() {
     prompt(engineerQ).then(answers => {
-        console.log(answers)
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.username);
         team.push(engineer);
         addMore();
@@ -35,7 +33,6 @@ function askEngineer() {
 
 function askIntern() {
     prompt(internQ).then(answers => {
-        console.log(answers)
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         team.push(intern);
         addMore();
@@ -48,7 +45,7 @@ function renderEmployeeInfo(data) {
       case "Engineer": return askEngineer();
       case "Intern": return askIntern();
     }
-  }
+}
 
 function addMore() {
         prompt({
@@ -62,9 +59,8 @@ function addMore() {
                 init();
             }
             else {
-                console.log(team);
-                console.log(team[0].getRole());
-                // writeToFile("index.html", generateEmployeeCards(team));
+                // console.log(team[0].getRole());
+                writeToFile("index.html", generateEmployeeCards(team));
             }
         })
 }
@@ -86,7 +82,7 @@ function init() {
         .prompt({
             type: "list",
             name: "role",
-            mesage: "What is the employee role?",
+            message: "What is the employee role?",
             choices: ['Manager', 'Engineer', 'Intern']
         })
         .then((response) => {

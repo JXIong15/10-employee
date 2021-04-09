@@ -17,23 +17,24 @@ function iconRole(employee) {
 // the unique data for each role
 function lastQ(employee) {
     switch(employee) {
-        case "Manager": return employee.number;
-        case "Engineer": return employee.username;
-        case "Intern": return employee.school;
+        case "Manager": return ("Office Number: " + employee.getNumber());
+        case "Engineer": return ("GitHub: " + employee.getUsername());
+        case "Intern": return ("School: " + employee.getSchool());
     } 
 }
 
+// individual employee cards
 function makeCard(employee) {
-    let icon = iconRole(employee);
-    let lastInfo = lastQ(employee);
+    let icon = iconRole(employee.getRole());
+    let lastInfo = lastQ(employee.getRole());
     return `<div class="card" style="background-color: rgb(240, 240, 240); box-shadow: 5px 5px 5px gray; margin-top: 20px;">
             <div class="card-header" style="background-color: rgb(86, 86, 255); color: white">
-                <h4>${employee.name}</h4>
-                ${icon}${employee}
+                <h4>${employee.getName()}</h4>
+                ${icon}${employee.getRole()}
             </div>
             <ul class="list-group list-group-flush" style="margin: 20px; border: solid; border-color: rgb(202, 202, 202); border-width: 1px;">
-                <li class="list-group-item">ID: ${employee.id}</li>
-                <li class="list-group-item">Email: ${employee.email}</li>
+                <li class="list-group-item">ID: ${employee.getID()}</li>
+                <li class="list-group-item">Email: ${employee.getEmail()}</li>
                 <li class="list-group-item">${lastInfo}</li>
             </ul>
             </div>`;
@@ -41,7 +42,7 @@ function makeCard(employee) {
 
 // Generates HTML cards
 function generateEmployeeCards(team) {
-    team.forEach(makeCard(team.constructor.name));
+    team.forEach(makeCard(team));
 
     let head = `<!DOCTYPE html>
     <html lang="en">
@@ -56,9 +57,9 @@ function generateEmployeeCards(team) {
                 <h1 style="text-align: center; background-color: rgb(253, 84, 84); color: white; padding: 20px;">My Team</h1>
                     <div class="justify-content-around align-content-center row" style="margin-left: 20px; margin-right: 20px;">`
 
-    console.log(`${team.name}'s card has been generated!`)
+    console.log(`${team.getName()}'s card has been generated!`)
     
-    return head + team.forEach(makeCard(team.constructor.name)) + 
+    return head + team.forEach(makeCard(team.getRole())) + 
             `</div>
         </body>
     </html>`;

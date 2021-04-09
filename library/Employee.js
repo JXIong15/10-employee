@@ -16,9 +16,6 @@ class Employee {
     getRole() {
         return "Employee";
     }
-    renderEmployee() {
-        return ``; // could put in manager/employee HTML
-    }
 }
 
 module.exports = Employee;

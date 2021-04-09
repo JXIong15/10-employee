@@ -63,7 +63,7 @@ function addMore() {
             }
             else {
                 console.log(team);
-                console.log(team[0].constructor.name);
+                console.log(team[0].getRole());
                 // writeToFile("index.html", generateEmployeeCards(team));
             }
         })

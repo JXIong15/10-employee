@@ -11,7 +11,8 @@ function iconRole(employee) {
 function lastQ(employee) {
     switch(employee.getRole()) {
         case "Manager": return ("Office Number: " + employee.getNumber());
-        case "Engineer": return (`GitHub: <a href="https://github.com/${employee.getUsername()}">${employee.getUsername()}</a>`);
+        case "Engineer": 
+            return (`GitHub: <a href="https://github.com/${employee.getUsername()}" target="_blank">${employee.getUsername()}</a>`);
         case "Intern": return ("School: " + employee.getSchool());
     } 
 }

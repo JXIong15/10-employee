@@ -1,7 +1,3 @@
-const Manager = require("./library/Manager.js");
-const Engineer = require("./library/Engineer.js");
-const Intern = require("./library/Intern.js");
-
 // unique icon for each role
 function iconRole(employee) {
     switch(employee.getRole()) {
@@ -15,7 +11,7 @@ function iconRole(employee) {
 function lastQ(employee) {
     switch(employee.getRole()) {
         case "Manager": return ("Office Number: " + employee.getNumber());
-        case "Engineer": return ("GitHub: " + employee.getUsername());
+        case "Engineer": return (`GitHub: <a href="https://github.com/${employee.getUsername()}">${employee.getUsername()}</a>`);
         case "Intern": return ("School: " + employee.getSchool());
     } 
 }
@@ -24,15 +20,14 @@ function lastQ(employee) {
 function makeCard(employee) {
     let icon = iconRole(employee);
     let lastInfo = lastQ(employee);
-    console.log(`${employee.getName()}'s card has been generated!`)
     return `<div class="card" style="background-color: rgb(240, 240, 240); box-shadow: 5px 5px 5px gray; margin-top: 20px;">
                 <div class="card-header" style="background-color: rgb(86, 86, 255); color: white">
                     <h4>${employee.getName()}</h4>
-                    ${icon} ${employee.getRole()}
+                    ${icon}  ${employee.getRole()}
                 </div>
                 <ul class="list-group list-group-flush" style="margin: 20px; border: solid; border-color: rgb(202, 202, 202); border-width: 1px;">
                     <li class="list-group-item">ID: ${employee.getID()}</li>
-                    <li class="list-group-item">Email: ${employee.getEmail()}</li>
+                    <li class="list-group-item">Email: <a href="mailto: ${employee.getEmail()}">${employee.getEmail()}</a></li>
                     <li class="list-group-item">${lastInfo}</li>
                 </ul>
             </div>`;

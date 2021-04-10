@@ -1,13 +1,5 @@
-const managerQ = require("../questions/manager-questions.js");
-const Manager = require("../library/Manager.js");
-const engineerQ = require("./questions/engineer-questions.js");
-const Engineer = require("../library/Engineer.js");
-const internQ = require("../questions/intern-questions.js");
-const Intern = require("../library/Intern.js");
 const Employee = require("../library/Employee.js");
-const { TestScheduler } = require("@jest/core"); // WHAT IS THIS?
 
-// Employee.js Test
 test("Can create Employee object", () => {
     const e = new Employee();
     expect(typeof(e)).toBe("object");

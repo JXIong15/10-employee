@@ -68,7 +68,7 @@ function addMore() {
 // Writes html card file
 function writeToFile(fileName, data) {
     try {
-        let rm = fs.writeFileSync(path.join(process.cwd(), fileName), data)
+        let rm = fs.writeFileSync(path.join(process.cwd(), fileName), data);
         console.log("Your employee card(s) has been generated!");
         return rm;
     }

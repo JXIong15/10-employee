@@ -79,9 +79,10 @@
 
 ## Demos
 App Demo: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
-HTML Demo:
+
+[HTML Demo](https://drive.google.com/file/d/1ybL3uqKS64OgW7tM9ZE1uXvXf5EliXBA/view):
    <p align="center"><img src="./assets/html-demo.gif" width="100% height="100%" stylealt="html demo"/></p>
-Test Demo:
+[Test Demo](https://drive.google.com/file/d/1uyzILccmIV30b2TPJxF5O80SlY-bFXh7/view):
    <p align="center"><img src="./assets/test-demo.gif" stylealt="test demo"/></p>
 
 

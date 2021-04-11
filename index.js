@@ -15,6 +15,9 @@ const path = require("path");
 // Array of the team members
 const team = [];
 
+
+// questions for each role
+
 function askManager() {
     prompt(managerQ).then(answers => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
@@ -39,14 +42,8 @@ function askIntern() {
     });
 }
 
-function renderEmployeeInfo(data) {
-    switch(data.role) {
-      case "Manager": return askManager();
-      case "Engineer": return askEngineer();
-      case "Intern": return askIntern();
-    }
-}
 
+// depending on the user specified role, program goes to the questions for that role
 function employeeRole() {
     prompt ({ 
         type: "list",
@@ -55,10 +52,15 @@ function employeeRole() {
         choices: ['Manager', 'Engineer', 'Intern']
     })
     .then((response) => {
-        renderEmployeeInfo(response);
+        switch(response.role) {
+            case "Manager": return askManager();
+            case "Engineer": return askEngineer();
+            case "Intern": return askIntern();
+          }
     })
 }
 
+// either adds more employees to the team or generates the employee cards once all the teammates are put in
 function addMore() {
         prompt({
             type: "list",
@@ -71,7 +73,6 @@ function addMore() {
                 employeeRole();
             }
             else {
-                // console.log(team[0].getRole());
                 writeToFile("index.html", generateEmployeeCards(team));
             }
         })
@@ -89,6 +90,7 @@ function writeToFile(fileName, data) {
     }
 }
 
+// initializes program with the manager's info
 function init() {
     inquirer
         askManager();

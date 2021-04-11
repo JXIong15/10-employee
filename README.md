@@ -8,7 +8,7 @@
 * [Tasks Completed](#tasks-completed)
 * [Technologies Used](#technologies-used)
 * [Installations](#installations)
-* [Demo](#demos)
+* [Demos](#demos)
 * [Sources](#sources)
 * [License](#license)
 

@@ -56,7 +56,15 @@ function addMore() {
         })
         .then((response) => {
             if (response.answer == "Yes") {
-                init();
+                prompt ({ 
+                    type: "list",
+                    name: "role",
+                    message: "What is the employee role?",
+                    choices: ['Manager', 'Engineer', 'Intern']
+                })
+                .then((response) => {
+                    renderEmployeeInfo(response);
+        })
             }
             else {
                 // console.log(team[0].getRole());
@@ -79,15 +87,7 @@ function writeToFile(fileName, data) {
 
 function init() {
     inquirer
-        .prompt({
-            type: "list",
-            name: "role",
-            message: "What is the employee role?",
-            choices: ['Manager', 'Engineer', 'Intern']
-        })
-        .then((response) => {
-            renderEmployeeInfo(response);
-        })
+        askManager();
 }
 
 init();

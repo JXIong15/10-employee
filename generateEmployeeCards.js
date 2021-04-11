@@ -52,7 +52,7 @@ function generateEmployeeCards(team) {
         </head>
             <body>
                 <h1 style="text-align: center; background-color: rgb(253, 84, 84); color: white; padding: 20px;">My Team</h1>
-                    <div class="justify-content-around align-content-center row" style="margin-left: 20px; margin-right: 20px;">
+                    <div class="justify-content-center align-content-center row" style="margin-left: 20px; margin-right: 20px;">
                     ${cards}
             </div>
         </body>

@@ -17,7 +17,10 @@
  ## Introduction
  Uses Node, Inquier, Jest, and the command line to generate a employee cards for the manager's team from the user-specified inputs.
  * GitHub Repository: https://github.com/JXIong15/10-employee
- * Video Demonstration: 
+ * App Demonstration: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
+  * HTML Demonstration: https://drive.google.com/file/d/1ybL3uqKS64OgW7tM9ZE1uXvXf5EliXBA/view
+  * Tests Demonstration: https://drive.google.com/file/d/1uyzILccmIV30b2TPJxF5O80SlY-bFXh7/view
+* Sample HTML: (./index.html)
 
 
 ## Functionality
@@ -36,7 +39,7 @@
 
 ## Tasks Completed
 * In the 10-employee directory, downloaded the inquirer and jest packages using npm.
-* Created a "library", "_tests_", and a "questions" folder. Each one contains an Engineer, Manager, and Intern file. Libary and _tests_ both have an Employee file as well.
+* Created a "library", "tests", and a "questions" directories. Each one contains an Engineer, Manager, and Intern file. Libary and _tests_ both have an Employee file as well.
   * Each Questions.js file contains questions for each role
   * Each role in the "library" contains constructor classes
   * Each test.js file contains tests for the constructor classes for each role
@@ -77,7 +80,8 @@
 
 ## Demos
 <p align="center">
-    <img src="./assets/app-demo" width="100% height="100%" stylealt="app demo"/> 
+    <iframe src="https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/preview" width="640" height="480" stylealt="app demo"></iframe>
+    <img src="./assets/html-demo" width="100% height="100%" stylealt="html demo"/> 
     <img src="./assets/test-demo" width="100% height="100%" stylealt="test demo"/> 
 </p>
 
@@ -91,78 +95,3 @@
 Licensed under the [MIT License](LICENSE).
 
 <p align="center">© 2021 Jou Xiong, Trilogy, Northwestern Coding Bootcamp</p>
-
-
-____________________________________
-
-
-## Your Task
-
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
-
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
-
-
-
-The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
-
-
-
-## Grading Requirements
-
-This homework is graded based on the following criteria: 
-
-### Deliverables: 15%
-
-* A sample HTML file generated using the application must be submitted.
-
-* Your GitHub repository containing your application code.
-
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the functionality of the Team Profile Generator and passing tests must be submitted, and a link to the video should be included in your README file.
-
-* The walkthrough video must show all four tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-* The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
-
-* The walkthrough video must demonstrate a generated HTML file that matches the user input.
-
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-	* Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
-
-	* Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
-
-  * The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and passing tests.
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.

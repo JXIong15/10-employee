@@ -8,7 +8,6 @@
 * [Tasks Completed](#tasks-completed)
 * [Technologies Used](#technologies-used)
 * [Installations](#installations)
-* [Future Idea](#future-idea)
 * [Demo](#demos)
 * [Sources](#sources)
 * [License](#license)
@@ -20,7 +19,7 @@
  * App Demonstration: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
   * HTML Demonstration: https://drive.google.com/file/d/1ybL3uqKS64OgW7tM9ZE1uXvXf5EliXBA/view
   * Tests Demonstration: https://drive.google.com/file/d/1uyzILccmIV30b2TPJxF5O80SlY-bFXh7/view
-* Sample HTML: (./index.html)
+* [Sample HTML](index.html)
 
 
 ## Functionality
@@ -80,7 +79,7 @@
 
 ## Demos
 <p align="center">
-    <iframe src="https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/preview" width="640" height="480" stylealt="app demo"></iframe>
+    <iframe src="https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/preview" width="640" height="480" stylealt="app demo">app</iframe>
     <img src="./assets/html-demo" width="100% height="100%" stylealt="html demo"/> 
     <img src="./assets/test-demo" width="100% height="100%" stylealt="test demo"/> 
 </p>

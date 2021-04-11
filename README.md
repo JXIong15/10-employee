@@ -78,15 +78,12 @@
 
 
 ## Demos
-<p align="center">
-    App Demo: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
-    
-   HTML Demo:
-   <img src="./assets/html-demo.gif" width="100% height="100%" stylealt="html demo"/> 
-    
-   Test Demo:
-   <img src="./assets/test-demo.gif" width="100% height="100%" stylealt="test demo"/> 
-</p>
+App Demo: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
+HTML Demo:
+   <p align="center"><img src="./assets/html-demo.gif" width="100% height="100%" stylealt="html demo"/></p>
+Test Demo:
+   <p align="center"><img src="./assets/test-demo.gif" stylealt="test demo"/></p>
+
 
 
 ## Sources

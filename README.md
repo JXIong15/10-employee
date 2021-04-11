@@ -79,8 +79,12 @@
 
 ## Demos
 <p align="center">
-    <iframe src="https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/preview" width="640" height="480" stylealt="app demo">app</iframe>
+    App Demo: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
+    
+    HTML Demo:
     <img src="./assets/html-demo" width="100% height="100%" stylealt="html demo"/> 
+    
+    Test Demo:
     <img src="./assets/test-demo" width="100% height="100%" stylealt="test demo"/> 
 </p>
 

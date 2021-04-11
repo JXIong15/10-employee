@@ -47,6 +47,18 @@ function renderEmployeeInfo(data) {
     }
 }
 
+function employeeRole() {
+    prompt ({ 
+        type: "list",
+        name: "role",
+        message: "What is the employee role?",
+        choices: ['Manager', 'Engineer', 'Intern']
+    })
+    .then((response) => {
+        renderEmployeeInfo(response);
+    })
+}
+
 function addMore() {
         prompt({
             type: "list",
@@ -56,15 +68,7 @@ function addMore() {
         })
         .then((response) => {
             if (response.answer == "Yes") {
-                prompt ({ 
-                    type: "list",
-                    name: "role",
-                    message: "What is the employee role?",
-                    choices: ['Manager', 'Engineer', 'Intern']
-                })
-                .then((response) => {
-                    renderEmployeeInfo(response);
-        })
+                employeeRole();
             }
             else {
                 // console.log(team[0].getRole());

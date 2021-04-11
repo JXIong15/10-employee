@@ -24,7 +24,7 @@ function makeCard(employee) {
     return `<div class="card" style="background-color: rgb(240, 240, 240); box-shadow: 5px 5px 5px gray; margin-top: 20px; width: 18em; margin: 20px">
                 <div class="card-header" style="background-color: rgb(86, 86, 255); color: white">
                     <h4>${employee.getName()}</h4>
-                    ${icon}  ${employee.getRole()}
+                    ${icon} ${employee.getRole()}
                 </div>
                 <ul class="list-group list-group-flush" style="margin: 20px; border: solid; border-color: rgb(202, 202, 202); border-width: 1px;">
                     <li class="list-group-item">ID: ${employee.getID()}</li>
@@ -56,8 +56,7 @@ function generateEmployeeCards(team) {
                     ${cards}
             </div>
         </body>
-    </html>`
-    )
+    </html>`)
 }
   
   module.exports = generateEmployeeCards;

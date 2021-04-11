@@ -15,17 +15,7 @@ const path = require("path");
 // Array of the team members
 const team = [];
 
-
-// questions for each role
-
-function askManager() {
-    prompt(managerQ).then(answers => {
-        const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
-        team.push(manager);
-        addMore();
-    });
-}
-
+// questions for engineer role
 function askEngineer() {
     prompt(engineerQ).then(answers => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.username);
@@ -34,6 +24,7 @@ function askEngineer() {
     });
 }
 
+// questions for intern role
 function askIntern() {
     prompt(internQ).then(answers => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
@@ -45,29 +36,28 @@ function askIntern() {
 
 // depending on the user specified role, program goes to the questions for that role
 function employeeRole() {
-    prompt ({ 
+    prompt({
         type: "list",
         name: "role",
         message: "What is the employee role?",
-        choices: ['Manager', 'Engineer', 'Intern']
+        choices: ['Engineer', 'Intern']
     })
-    .then((response) => {
-        switch(response.role) {
-            case "Manager": return askManager();
-            case "Engineer": return askEngineer();
-            case "Intern": return askIntern();
-          }
-    })
+        .then((response) => {
+            switch (response.role) {
+                case "Engineer": return askEngineer();
+                case "Intern": return askIntern();
+            }
+        })
 }
 
 // either adds more employees to the team or generates the employee cards once all the teammates are put in
 function addMore() {
-        prompt({
-            type: "list",
-            name: "answer",
-            message: "Would you like to add another employee?",
-            choices: ["Yes", "No"]
-        })
+    prompt({
+        type: "list",
+        name: "answer",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"]
+    })
         .then((response) => {
             if (response.answer == "Yes") {
                 employeeRole();
@@ -93,7 +83,11 @@ function writeToFile(fileName, data) {
 // initializes program with the manager's info
 function init() {
     inquirer
-        askManager();
+        .prompt(managerQ).then(answers => {
+            const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
+            team.push(manager);
+            addMore();
+        })
 }
 
 init();

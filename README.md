@@ -1,6 +1,100 @@
-# 10-employee
-
 # 10 Object-Oriented Programming: Team Profile Generator
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+## Table of Contents
+* [Introduction](#introduction)
+* [Functionality](#functionality)
+* [Tasks Completed](#tasks-completed)
+* [Technologies Used](#technologies-used)
+* [Installations](#installations)
+* [Future Idea](#future-idea)
+* [Demo](#demos)
+* [Sources](#sources)
+* [License](#license)
+
+
+ ## Introduction
+ Uses Node, Inquier, Jest, and the command line to generate a employee cards for the manager's team from the user-specified inputs.
+ * GitHub Repository: https://github.com/JXIong15/10-employee
+ * Video Demonstration: 
+
+
+## Functionality
+* When the user types "node index.js" in the "/10-employee" directory, then the program is initiated.
+* The user, who is the manager, is then asked a series of questions about themself: name, email, id, and office number.
+* The manager is then asked if they want to add more employees.
+  * If "No", then the program generates an HTML doc containing the Manger's employee card
+  * If "Yes", then the program asks the manager if they want to add an Intern or an Engineer
+* When an Engineer is selected, the app asks for the Engineer's name, email, id, and GitHub username.
+* When an Intern is selected, the app asks for the Intern's name, email, id, and school name.
+* The manager is continuously prompted after each employee so that they can add their whole team. 
+  * The moment the Manager chooses, "No" to adding more employees, then the HTML document
+  containing each team member's employee card is generated from the generateEmployeeCards.js file.
+* For each employee and employee role, a class.js and questions.js file was created.
+
+
+## Tasks Completed
+* In the 10-employee directory, downloaded the inquirer and jest packages using npm.
+* Created a "library", "_tests_", and a "questions" folder. Each one contains an Engineer, Manager, and Intern file. Libary and _tests_ both have an Employee file as well.
+  * Each Questions.js file contains questions for each role
+  * Each role in the "library" contains constructor classes
+  * Each test.js file contains tests for the constructor classes for each role
+* In the index.js file:
+	* included all of the required packages and other js files needed
+	* created an empty array to hold the team members
+  * created a function to run when initiated by the user. This function prompts for the Manager's information.
+    * addMore() function is created to give the Manager the option to add more team members.
+    * if more team members are desired, then an employeeRole() function prompts the Manager to choose the employee role and then asks the questions pertaining to the employee's information
+      * created functions for 'intern' and 'engineer' questions respectively
+        * all Manager, Engineer, and Intern question functions use their respective role constructors to create the new employee for that role
+    * once the manager decides not to add more employees, then a writeToFile() function creates an HTML document by passing the 'team' array into the generateEmployeeCards() function
+* in the generateEmployeeCards.js file, which is prompted by the index.js generateEmpployeeCards() function:
+  * the generateEmployeeCards(team) function uses a forEach loop to iterate through each employee in the 'team' array
+    * the empployee is then passed into a makeCard() function, which creates and returns an employee card for them
+      * an iconRole() function returns the employee role to generate the correct icon for the employee
+      * a lastQ() function uses the employee role to return the unique information for the role
+    * the generateEmployeeCards() function returns a Template Literal containing the code for the HTML file. 
+      * This code is returned to the writeToFile() function in the index.js file, which then genereates an HTML file with the code.
+* once the HTML file is generated, the application closes. The user can then click on the HTML file and open it to see the different cards for their employee(s).
+
+
+## Installations
+* Download [Node and npm](https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs)
+* Then, download the Inquier Package by typing, "npm install inquirer" in command line
+* Then, download the Jest package by typing, "npm install jest" in the command line
+
+
+## Technologies Used
+* JavaScript (main code)
+* HTML (the employee cards)
+* Node
+  * Inquirer (for asking questions to the user)
+  * Jest (for testing)
+* Terminal/Command Line (to interact with the questions)
+* Txt File (License)
+
+
+## Demos
+<p align="center">
+    <img src="./assets/app-demo" width="100% height="100%" stylealt="app demo"/> 
+    <img src="./assets/test-demo" width="100% height="100%" stylealt="test demo"/> 
+</p>
+
+
+## Sources
+* Inquirer Package: https://www.npmjs.com/package/inquirer
+* Jest Package: https://www.npmjs.com/package/jest
+
+
+## License
+Licensed under the [MIT License](LICENSE).
+
+<p align="center">© 2021 Jou Xiong, Trilogy, Northwestern Coding Bootcamp</p>
+
+
+____________________________________
+
 
 ## Your Task
 
@@ -8,115 +102,9 @@ Your task is to build a Node.js command-line application that takes in informati
 
 Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
 
-> **Note**: There is no starter code for this assignment.
 
-## User Story
-
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-
-
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-```
-
-## Mock-Up
-
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
-
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/10-object-oriented-programming-homework-demo.png)
-
-The styling in the image is just an example, so feel free to add your own.
-
-## Getting Started
-
-This homework will combine many of the skills we've covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help get started.
-
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
-
-```bash
-node index.js
-```
-
-It is recommended that you start with a directory structure that looks like the following example:
-
-```md
-__tests__/			// jest tests
-  Employee.test.js
-  Engineer.test.js
-  Intern.test.js
-  Manager.test.js
-dist/               // rendered output (HTML) and CSS style sheet
-lib/				// classes
-src/				// template helper code
-index.js			// runs the application
-```
 
 The application must include `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) must ALL pass.
-
-The first class is an `Employee` parent class with the following properties and methods:
-
-* `name`
-
-* `id`
-
-* `email`
-
-* `getName()`
-
-* `getId()`
-
-* `getEmail()`
-
-* `getRole()`&mdash;returns `'Employee'`
-
-The other three classes will extend `Employee`.
-
-In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-
-* `officeNumber`
-
-* `getRole()`&mdash;overridden to return `'Manager'`
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-
-* `github`&mdash;GitHub username
-
-* `getGithub()`
-
-* `getRole()`&mdash;overridden to return `'Engineer'`
-
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`&mdash;overridden to return `'Intern'`
-
-Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.
 
 
 

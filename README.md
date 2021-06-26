@@ -16,9 +16,7 @@
  ## Introduction
  Uses Node, Inquier, Jest, and the command line to generate a employee cards for the manager's team from the user-specified inputs.
  * GitHub Repository: https://github.com/JXIong15/10-employee
- * App Demonstration: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
-  * HTML Demonstration: https://drive.google.com/file/d/1ybL3uqKS64OgW7tM9ZE1uXvXf5EliXBA/view
-  * Tests Demonstration: https://drive.google.com/file/d/1uyzILccmIV30b2TPJxF5O80SlY-bFXh7/view
+ * App Demonstration: https://drive.google.com/file/d/1yUw9DJLjVVZRNFjpa23rZ0-8LRHwO-DD/view
 * [Sample HTML](index.html)
 <p align="center"><img src="./assets/desktop.png" width="80%" stylealt="html desktop"/></p>
 
@@ -79,12 +77,12 @@
 
 
 ## Demos
-App Demo: https://drive.google.com/file/d/1aIvexVPLv0fNYhxhRUbo314YsrOxEjaT/view
+App Demo: https://drive.google.com/file/d/1yUw9DJLjVVZRNFjpa23rZ0-8LRHwO-DD/view
 
-[HTML Demo](https://drive.google.com/file/d/1ybL3uqKS64OgW7tM9ZE1uXvXf5EliXBA/view):
+HTML Demo:
    <p align="center"><img src="./assets/html-demo.gif" width="100% height="100%" stylealt="html demo"/></p>
 
-[Test Demo](https://drive.google.com/file/d/1uyzILccmIV30b2TPJxF5O80SlY-bFXh7/view):
+Test Demo:
    <p align="center"><img src="./assets/test-demo.gif" stylealt="test demo"/></p>
 
 
